@@ -8,13 +8,13 @@ var port = 3078;
 module.exports = {
     module: {
         loaders: [{
-            test: /\.jsx?$/,
+            test: /\.js$/,
             exclude: /(bower_components|node_modules)/,
-            loaders: ['react-hot', 'babel']
+            loaders: ['babel']
         }]
     },
     resolve: {
-        extensions: ['', '.js', '.json', '.jsx']
+        extensions: ['', '.js', '.json']
     },
     entry: {
         demo: [
@@ -31,7 +31,8 @@ module.exports = {
     },
     devServer: {
         contentBase: path.resolve(__dirname, "demo/assets"),
-        port: port
+        port: port,
+        hot: true
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()

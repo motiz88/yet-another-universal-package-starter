@@ -16,20 +16,20 @@ module.exports = function(config) {
         webpack: {
             module: {
                 preLoaders: [{
-                    test: /\.jsx?$/,
+                    test: /\.js$/,
                     exclude: [
                         path.resolve('src/components/'),
                         path.resolve('node_modules/')
                     ],
                     loader: 'babel'
                 }, {
-                    test: /\.jsx?$/,
+                    test: /\.js$/,
                     include: path.resolve('src/components/'),
                     loader: 'isparta'
                 }]
             },
             resolve: {
-                extensions: ['', '.js', '.json', '.jsx']
+                extensions: ['', '.js', '.json']
             },
             devtool: 'inline-source-map'
         },

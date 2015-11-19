@@ -1,19 +1,15 @@
-import ModuleDefaultComponent from '../src';
-import {StarterComponent} from '../src';
+import ModuleEntryPoint from '../src';
 
 describe('module entry point', function() {
-    it('should be a function', function() {
-        expect(ModuleDefaultComponent).to.be.a('function');
-    });
-    it('should be StarterComponent', function() {
-        expect(ModuleDefaultComponent).to.equal(StarterComponent);
+    it('should be defined', function() {
+        expect(ModuleEntryPoint).to.exist;
     });
 });
 
-const testsContext = require.context('../src/components/', true, /index\.jsx?$/);
+const testsContext = require.context('./specs/', true, /\.js$/);
 
 testsContext.keys().forEach(testsContext);
 
-const componentsContext = require.context('../src/components/', true, /index\.jsx?$/);
+const componentsContext = require.context('../src/', true, /\.js$/);
 
 componentsContext.keys().forEach(componentsContext);
